@@ -5,6 +5,7 @@ import org.joseblas.addressbook.model.Person;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public interface AddressBookService {
 
@@ -13,5 +14,7 @@ public interface AddressBookService {
     public Optional<Person> getOldestPerson();
 
     public void reload(List<Person> newdata);
+
+    public Optional<Person> get(String name);
 
 }

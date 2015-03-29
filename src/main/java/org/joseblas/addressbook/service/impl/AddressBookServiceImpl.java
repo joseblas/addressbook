@@ -30,4 +30,9 @@ public class AddressBookServiceImpl implements AddressBookService {
     public void reload(List<Person> newdata) {
         this.addressbook = newdata;
     }
+
+    @Override
+    public Optional<Person> get(String name) {
+        return addressbook.stream().filter(p -> name.equals(p.getName())).findFirst();
+    }
 }

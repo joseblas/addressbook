@@ -14,6 +14,8 @@ I´ve used the same approach, but using min.
 3. How many days older is Bill than Paul?
 JodaTime is the perfect library to do this. It´s implemented in Person class because it a comparison between two objects
 of that class.
+Test: AddressBookServiceImplTest#howOlderIsBillThanPaul
+
 
 
 # Notes

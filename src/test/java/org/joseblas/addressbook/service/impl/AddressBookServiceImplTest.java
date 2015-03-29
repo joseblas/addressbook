@@ -39,4 +39,11 @@ public class AddressBookServiceImplTest extends TestBase {
         Assert.assertTrue("There are data", person.isPresent());
         Assert.assertEquals("Is Wes Jackson", "Wes Jackson", person.get().getName());
     }
+
+    @Test
+    public void howOlderIsBillThanPaul(){
+        Person bill = addressbook.get("Bill McKnight").get();
+        Person paul = addressbook.get("Paul Robinson").get();
+        assertEquals("The diff is 2862", 2862, bill.daysOlderThan(paul));
+    }
 }
