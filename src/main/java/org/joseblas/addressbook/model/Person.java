@@ -7,9 +7,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by joseblas on 29/3/15.
- */
 public class Person {
     public static final String DD_MM_YYYY = "dd/MM/yyyy";
 

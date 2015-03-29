@@ -9,9 +9,6 @@ import java.io.UncheckedIOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by joseblas on 29/3/15.
- */
 public class CsvReader {
     private static final String SEPARATOR = ",";
 

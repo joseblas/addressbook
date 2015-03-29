@@ -8,16 +8,12 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Created by joseblas on 29/3/15.
- */
 public class AddressBookServiceImpl implements AddressBookService {
 
     private List<Person> addressbook;
 
     public AddressBookServiceImpl(List<Person> addressbook) throws ParseException {
         this.addressbook = addressbook;
-
     }
 
     @Override
@@ -28,5 +24,10 @@ public class AddressBookServiceImpl implements AddressBookService {
     @Override
     public Optional<Person> getOldestPerson() {
         return addressbook.stream().min((p1, p2) -> p1.getDob().compareTo(p2.getDob()));
+    }
+
+    @Override
+    public void reload(List<Person> newdata) {
+        this.addressbook = newdata;
     }
 }
