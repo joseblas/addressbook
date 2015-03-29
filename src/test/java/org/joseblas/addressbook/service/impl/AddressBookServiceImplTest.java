@@ -20,10 +20,10 @@ public class AddressBookServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        people.add(Person.createPerson("Rosa", Gender.Female, "03/07/1980"));
-        people.add(Person.createPerson("Maria", Gender.Female, "23/01/1983"));
-        people.add(Person.createPerson("Tabo", Gender.Male, "16/04/1978"));
-        people.add(Person.createPerson("Domi", Gender.Male, "16/04/1979"));
+        people.add(Person.createPerson("Rosa", Gender.Female.name(), "03/07/1980"));
+        people.add(Person.createPerson("Maria", Gender.Female.name(), "23/01/1983"));
+        people.add(Person.createPerson("Tabo", Gender.Male.name(), "16/04/1978"));
+        people.add(Person.createPerson("Domi", Gender.Male.name(), "16/04/1979"));
         addressbook = new AddressBookServiceImpl(people);
 
     }

@@ -11,7 +11,9 @@ import java.util.Date;
  * Created by joseblas on 29/3/15.
  */
 public class Person {
-    protected static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    public static final String DD_MM_YYYY = "dd/MM/yyyy";
+
+    protected static SimpleDateFormat sdf = new SimpleDateFormat(DD_MM_YYYY);
 
     private String name;
     private Gender gender;
@@ -45,11 +47,22 @@ public class Person {
         return Days.daysBetween(new DateTime(getDob()), new DateTime(other.getDob())).getDays();
     }
 
-    public static Person createPerson(String name, Gender gender, String dob) throws ParseException {
+    public static Person createPerson(String name, String gender, String dob){
         Person p = new Person();
         p.setName(name);
-        p.setGender(gender);
-        p.setDob(sdf.parse(dob));
+        try {
+            Gender parsedGender = Gender.valueOf(gender.trim());
+            p.setGender(parsedGender);
+        }catch (IllegalArgumentException pe){
+            //default gender
+            p.setGender(Gender.Male);
+        }
+        try {
+            p.setDob(sdf.parse(dob));
+        } catch (ParseException e) {
+            //default date
+            p.setDob(new Date());
+        }
         return p;
     }
 
